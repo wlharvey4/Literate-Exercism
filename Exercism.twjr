@@ -1,0 +1,1022 @@
+\input texinfo   @c -*-texinfo-*-
+@c Exercism.twjr CREATED 2018-10-20 by wlharvey4
+
+
+@c %**start of header (This is for running Texinfo on a region.)
+@setfilename Exercism.info
+@settitle Exercism Exercises
+@c %**end of header (This is for running Texinfo on a region.)
+
+@c Change how xref titles are quoted.
+@dquotexrefs
+@c And let braces in index entries work.
+@allowindexbraces
+@ifclear FORPRINT
+@pdflinkcolor
+@urllinkcolor
+@hideurls
+@end ifclear
+
+@c The following information should be updated here only!
+@c This sets the edition of the document.
+
+@c These apply across the board.
+@set UPDATE-MONTH OCTOBER, 2018
+@set EDITION 0.1a
+
+@set TITLE Exercism Exercises and Notes
+@set SHORTTITLE Exercism
+
+@iftex
+@set DOCUMENT book
+@set CHAPTER chapter
+@set APPENDIX appendix
+@set SECTION section
+@set SUBSECTION subsection
+@end iftex
+@ifhtml
+@set DOCUMENT Web page
+@set CHAPTER chapter
+@set APPENDIX appendix
+@set SECTION section
+@set SUBSECTION subsection
+@end ifhtml
+@ifinfo
+@set DOCUMENT Info file
+@set CHAPTER major node
+@set APPENDIX major node
+@set SECTION minor node
+@set SUBSECTION node
+@end ifinfo
+@ifdocbook
+@set DOCUMENT book
+@set CHAPTER chapter
+@set APPENDIX appendix
+@set SECTION section
+@set SUBSECTION subsection
+@end ifdocbook
+
+@c some special symbols
+@ifnottex
+@macro ii{text}
+@i{\text\}
+@end macro
+@end ifnottex
+
+@c merge the function and variable indexes into the concept index
+@c do so without the code font, and in the index entries do the
+@c font management ourselves.  Also merge in the chunk definition
+@c and reference entries, which jrweave creates for us.
+@ifnothtml
+@synindex fn cp
+@synindex vr cp
+@synindex cd cp
+@synindex cr cp
+@end ifnothtml
+
+@c If "finalout" is commented out, the printed output will show
+@c black boxes that mark lines that are too long.  Thus, it is
+@c unwise to comment it out when running a master in case there are
+@c overfulls which are deemed okay.
+
+
+
+
+
+
+
+
+
+
+
+@iftex
+@c @finalout
+@end iftex
+
+@c /////////////////////////////////////////////////////////////////////////////
+@copying
+@docbook
+<para>Published by:</para>
+
+<literallayout class="normal">Full Name
+Address Line 1
+Address Line 2
+etc.
+Email: <email>user@@example.com</email>
+URL: <ulink url="http://www.example.com/">http://www.example.com/</ulink></literallayout>
+
+<literallayout class="normal">Copyright &copy; YYYY, YYYY
+Full name here
+All Rights Reserved.</literallayout>
+@end docbook
+
+@ifnotdocbook
+Copyright @copyright{} YYYY, YYYY @*
+Full name here @*
+All Rights Reserved.
+@end ifnotdocbook
+@sp 1
+The FOO program is copyright
+@copyright{} YYYY, YYYY by Full name here. It is published under
+the conditions of the GNU General Public License, version 3.
+@sp 2
+This is Edition @value{EDITION} of @cite{@value{TITLE}}.
+@end copying
+@c \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+@c /////////////////////////////////////////////////////////////////////////////
+@c Uncomment this for the release.  Leaving it off saves paper
+@c during editing and review.
+@c @setchapternewpage odd
+
+@c Uncomment this if it's ever printed as a real book(let).
+@c @shorttitlepage @value{SHORTTITLE}
+
+@titlepage
+@title @value{TITLE}
+@subtitle @value{UPDATE-MONTH}
+@author Full Name here
+
+@ifnotdocbook
+@c Include the Distribution inside the titlepage environment so
+@c that headings are turned off.  Headings on and off do not work.
+
+@page
+@vskip 0pt plus 1filll
+Published by:
+@sp 1
+Full name here @*
+Address Line 1 @*
+Address Line 2 @*
+etc. @*
+Email: @EMAIL{user@@example.com,user AT example.com} @*
+URL: @url{http://www.example.com/} @*
+
+@insertcopying
+@end ifnotdocbook
+@end titlepage
+@c \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+@set DRAFT @i{DRAFT}
+
+@iftex
+@headings off
+@evenheading @thispage @| @value{DRAFT} @| @strong{@value{SHORTTITLE}}
+@oddheading  @strong{@thischapter} @| @value{DRAFT} @| @thispage
+@end iftex
+
+
+
+@c /////////////////////////////////////////////////////////////////////////////
+@ifnottex
+@ifnotdocbook
+@ifnotxml
+
+@node Top
+@top General Introduction
+@c Preface node should come right after the Top
+@c node, in `unnumbered' sections, then the introductory chapter.
+@c Licensing nodes are appendices, they're not central to TexiWebJr.
+
+This file documents Exercism coding practice.
+
+@initial_setup
+mkdir -p bin
+mkdir -p src/bash
+@end initial_setup
+
+
+@insertcopying
+@end ifnotxml
+@end ifnotdocbook
+@end ifnottex
+
+@menu
+@detailmenu
+@end detailmenu
+@end menu
+@c \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+@c /////////////////////////////////////////////////////////////////////////////
+@c @summarycontents
+@contents
+@c \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+
+
+
+
+
+@c *****************************************************************************
+
+@c Add these to the menu if they ever get included.
+@c @node Foreword
+@c @unnumbered Foreword
+
+@node Preface
+@unnumbered Preface
+
+Text here.
+
+@menu
+* Audience::                    Who should read this @value{DOCUMENT}.
+* Overview::                    An overview of the @value{DOCUMENT}.
+* Conventions::                 Typographical conventions.
+* Acknowledgements::            Acknowledgements.
+@end menu
+
+
+
+
+@c -----------------------------------------------------------------------------
+
+@node Audience
+@unnumberedsec Intended Audience
+
+Text here.
+
+
+
+
+@c -----------------------------------------------------------------------------
+
+@node Overview
+@unnumberedsec What Is Covered
+
+Text and chapter by chapter description here.
+
+
+
+
+@c -----------------------------------------------------------------------------
+
+@node Conventions
+@unnumberedsec Typographical Conventions
+
+@c Copied mostly verbatim from the gawk manual.
+
+@cindex Texinfo document formatting language
+This @value{DOCUMENT} is written in an enhanced version of
+@uref{http://www.gnu.org/software/texinfo/, Texinfo},
+the GNU documentation formatting language.
+A single Texinfo source file is used to produce both the printed and online
+versions of a program's documentation.
+@ifnotinfo
+Because of this, the typographical conventions
+are slightly different than in other books you may have read.
+@end ifnotinfo
+
+Examples you would type at the command-line are preceded by the common
+shell primary and secondary prompts, @samp{$} and @samp{>}.  Input that
+you type is shown @kbd{like this}.  Output from the command is preceded
+by the glyph ``@print{}''.  This typically represents the command's
+standard output.  Error messages, and other output on the command's
+standard error, are preceded by the glyph ``@error{}''.  For example:
+
+@example
+$ @kbd{echo hi on stdout}
+@print{} hi on stdout
+$ @kbd{echo hello on stderr 1>&2}
+@error{} hello on stderr
+@end example
+
+@ifnotinfo
+In the text, command names appear in @code{this font}, while code segments
+appear in the same font and quoted, @samp{like this}.  Options look
+like this: @option{-f}.  Some things are emphasized @emph{like this},
+and if a point needs to be made strongly, it is done @strong{like this}.
+The first occurrence of a new term is usually its @dfn{definition} and
+appears in the same font as the previous occurrence of ``definition''
+in this sentence.  Finally, file names are indicated like this:
+@file{/path/to/our/file}.
+@end ifnotinfo
+
+
+
+
+@c -----------------------------------------------------------------------------
+
+@node Acknowledgements
+@unnumberedsec Acknowledgements
+
+
+
+
+
+
+
+
+@c *****************************************************************************
+
+@node Introduction
+@chapter Introduction
+
+The classical introductory exercise.  Just say @dots{}
+
+@quotation
+``Hello, World!''
+@end quotation
+
+@url{http://en.wikipedia.org/wiki/%22Hello,_world!%22_program, "Hello, World!"}
+is the traditional first program for beginning programming in a new language or
+environment.
+
+The objectives are simple:
+
+@itemize
+@item
+Write a function that returns the string "Hello, World!".
+@item
+Run the test suite and make sure that it succeeds.
+@item
+Submit your solution and check it at the website.
+@end itemize
+
+If everything goes well, you will be ready to fetch your first real exercise.
+
+
+
+
+@c -----------------------------------------------------------------------------
+
+@node Bash Version of Hello World
+@section Bash Version of Hello World
+@cindex bash hello world
+@cindex hello world in bash
+
+@heading Welcome To Bash
+
+Unlike many other languages here, @file{bash} is a bit of a special snowflake.
+If you are on a Mac or other unix-y platform, you almost definitely already
+have @file{bash}.  In fact, anything you type into the terminal is likely going
+through @file{bash}.
+
+The downside to this is that there isn't much of a development ecosystem around
+@file{bash} like there is for other languages, and there are multiple versions
+of @file{bash} that can be frustratingly incompatible.  Luckily we shouldn't
+hit those differences for these basic examples, and if you can get the tests to
+pass on your machine, we are doing great.
+
+@subheading Installation
+
+As mentioned above, if you are on a unix-like OS (Mac OS X, Linux, Solaris,
+etc), you probably already have @file{bash}.
+
+@subheading Testing
+@cindex bash testing
+@cindex @file{bats}
+@cindex install @file{bats}
+@cindex Homebrew
+
+As there isn't much of a @file{bash} ecosystem, there also isn't really a @i{de
+facto} leader in the @file{bash} testing area.  For these examples we are using
+@url{https://github.com/sstephenson/bats,@file{bats}}.  You should be able to
+install it from your favorite package manager.  On OS X with Homebrew this
+would look something like this:
+
+@example
+$ brew install bats
+==> Downloading
+https://github.com/sstephenson/bats/archive/v0.4.0.tar.gz
+==> Downloading from
+https://codeload.github.com/sstephenson/bats/tar.gz/v0.4.0
+########################################################################
+100.0%
+==> ./install.sh /opt/boxen/homebrew/Cellar/bats/0.4.0
+🍺  /opt/boxen/homebrew/Cellar/bats/0.4.0: 10 files, 60K, built in 2
+seconds
+@end example
+
+@subsubheading Run The Tests
+@cindex tests, running
+@cindex bats, running
+
+@example
+bats hello_world_test.sh
+@end example
+@cindex @code{skip} annotqtions
+
+After the first test(s) pass, continue by commenting out or removing the
+@code{skip} annotations prepending other tests.
+
+@subheading Source
+
+This is an exercise to introduce users to using Exercism
+@url{http://en.wikipedia.org/wiki/%22Hello,_world!%22_program, Hello, World!}.
+
+@subheading External Utilities
+
+`@file{Bash}` is a language to write scripts that works closely with various
+system utilities, like
+
+@cindex @command{sed}
+@itemize
+@item
+@url{https://www.gnu.org/software/sed/,sed},
+
+@cindex @file{AWK}
+@item
+@url{https://www.gnu.org/software/gawk/,AWK},
+
+@cindex @command{date}
+@item
+@url{https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html,
+date}
+
+and even other programming languages, like
+
+@cindex @file{Python}
+@item
+@url{https://www.python.org/, Python}.
+
+@end itemize
+
+This track does not restrict the usage of these utilities, and as long as your
+solution is portable between systems and does not require installing third
+party applications, feel free to use them to solve the exercise.
+
+For an extra challenge, if you would like to have a better understanding of the
+language, try to re-implement the solution in pure `@file{Bash}`, without using
+any external tools.
+
+@subheading Submitting Incomplete Solutions
+
+It's possible to submit an incomplete solution so you can see how others have
+completed the exercise.
+
+
+
+
+
+
+
+
+@c *****************************************************************************
+
+@node Bash Exercism
+@chapter Bash Exercism
+@cindex bash
+
+
+
+
+
+@c -----------------------------------------------------------------------------
+
+@node Bash Beginner
+@section Bash Beginner
+@cindex bash beginner
+
+
+
+
+
+
+
+
+
+
+@c /////////////////////////////////////////////////////////////////////////////
+@c START OF APPENDIX
+@c \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+
+
+
+
+
+@c *****************************************************************************
+
+@node Utility Programs
+@appendix Utility Programs
+
+
+
+
+@c -----------------------------------------------------------------------------
+
+@node Bash Script Template
+@appendixsec Bash Script Template
+@cindex bash script template
+@cindex template, bash script
+@cindex script, bash template
+
+This is a @file{bash} script template to help you quickly start any script.  It
+contains some sensible defaults, about which you can learn more by visiting:
+@url{https://google.github.io/styleguide/shell.xml, Shell XML}.  Since the
+template contains a ``hashbang'' line, the program can be made executable and
+linked into a @file{bin} directory to be run from the command line.  It will
+still be executable as a regular shell script as well.
+
+While the template file will be moved into the directory
+@file{src/bash/templates}, the code chunks below should be used instead to
+wrap around your own semantic code productions.  This could be done as follows:
+
+@verbatim
+ @<Bash Template---Begin@>
+ @<Your Semantic Code@>
+ @<Bash Template---End@>
+@end verbatim
+
+In a more complicated situation, you can use the code chunks that make up
+the @file{Begin} and @file{End} code chunks instead, and change some of the
+default template language.
+
+@heading Bash Template
+@cindex bash script template skeleton
+@cindex script template skeleton
+@cindex skeleton bash script
+@cindex template skeleton, bash script
+
+Here is a skeleton of a template; when creating a bash script, just wrap your
+code inside a @code{Bash Template---Begin} and a @code{Bash Template---End}
+code chunk.
+
+@(bash_template.sh@)=
+@<Bash Template---Begin@>
+
+@<Bash Template---End@>
+@
+
+@post_create bash_template.sh mkdir -p src/bash/templates && mv bash_template.sh src/bash/templates
+
+@subheading Bash Template Start
+
+@<Bash Template---Begin@>=
+@<Bash Template---Begin--Hash Bang@>
+@<Bash Template---Begin--Default Options@>
+@<Bash Template---Begin--Main Loop@>
+@
+
+@subheading Bash Template End
+
+@<Bash Template---End@>=
+@<Bash Template---End--Main Loop@>
+
+@<Bash Template---End--Call Main Loop@>
+@
+
+
+@c .....................................
+
+@node Bash Template Hash Bang
+@appendixsubsec Bash Template Hash Bang
+
+@<Bash Template---Begin--Hash Bang@>=
+#! /usr/bin/env bash
+
+@
+
+
+@c .....................................
+
+@node Bash Template Default Options
+@appendixsubsec Bash Template Default Options
+
+There are two default options:
+
+@table @code
+
+@item errexit
+cause the script to exit when an error occurs
+
+@item nounset
+cause the script to exit when it tries to use an unset variable
+
+@end table
+
+To learn more, visit @url{https://google.github.io/styleguide/shell.xml, Shell
+XML}.
+
+@<Bash Template---Begin--Default Options@>=
+set -o errexit
+set -o nounset
+
+@
+
+
+@c .....................................
+
+@node Begin Main Loop
+@appendixsubsec Begin Main Loop
+
+@samp{input=$1} is a string variable containing only the FIRST argument passed
+to the script, while @samp{argv="$@@"} is a string with ALL arguments
+
+The @code{-""} sets the variables to the empty strings if they are not set upon
+entering the @code{main()} function to prevent the script from exiting with a
+@code{nounset} error.
+
+@<Bash Template---Begin--Main Loop@>=
+main() {
+  argv=${@-""}
+  input=${1-""}
+
+  # script code goes here
+@
+
+
+@c .....................................
+
+@node End Main Loop
+@appendixsubsec End Main Loop
+
+@<Bash Template---End--Main Loop@>=
+}
+@
+
+
+@c .....................................
+
+@node Call Main Loop
+@appendixsubsec Call Main Loop
+
+This code calls the @code{main} function, passing all the arguments to it via
+@code{$@@}.  The argument is in quotes to prevent whitespace issues.
+
+@<Bash Template---End--Call Main Loop@>=
+main "$@"
+
+@
+
+
+
+
+
+
+
+@c *****************************************************************************
+
+@node Exercism Makefile
+@appendix Exercism Makefile
+@cindex Makefile
+
+The @file{Makefile} is composed of large sections, each of which is described
+in the text below.  If you change anything in this source document relating to
+this @file{Makefile} section, then you will need to extract it through running
+@command{jrtangle}.  The @file{Makefile} has a convenience target that will
+work to make this easy: @code{make makefile}.  This target @command{tangle}s
+the code, then @command{weave}s the code, and then does a @command{worldclean}
+on the directory, leaving a fresh @file{Makefile} and @file{TEXI} file (that
+will need to be processed immediately; @ref{Processing the @file{TEXI} File}).
+
+@(Makefile@)=
+@<Makefile---Constants@>
+@<Makefile---Default Target@>
+@<Makefile---Makefile Target@>
+@<Makefile---TWJR Targets@>
+@<Makefile---Texinfo Targets@>
+@<Makefile---Clean Targets@>
+@<Makefile---Program Targets@>
+@
+
+
+
+@c -----------------------------------------------------------------------------
+
+@node Makefile Constants
+@appendixsec Makefile Constants
+@cindex Makefile constants
+
+@<Makefile---Constants@>=
+FILE := Exercism
+
+@
+
+@c -----------------------------------------------------------------------------
+
+@node Makefile Default Target
+@appendixsec Makefile Default Target
+@cindex Makefile default rule
+
+The @file{Makefile} default target is to create everything, i.e.
+
+@itemize
+@item
+@code{INFO}
+@item
+@code{HTML}
+@item
+@code{PDF}
+@item
+@file{bin/*}
+@item
+@file{src/*}
+@end itemize
+
+However, this assumes that the @code{TEXI} file has been processed, i.e.,
+@command{jrweave} has been run, producing the @code{TEXI}, and its master menu
+has been created and all nodes processed and links updated.  If this file has
+not been processed and updated (via the @command{make weave} and then the
+proper @file{makeinfo} updating commands) then the compilation will simply
+throw errors.  You will need to process the @code{TEXI} file and run
+@command{make} again and it will work.  @xref{Processing the @file{TEXI} File}.
+
+@<Makefile---Default Target@>=
+.PHONY  : default all
+default : all
+all     : makeinfo tangle
+
+@
+
+
+
+
+@c -----------------------------------------------------------------------------
+
+@node Makefile Target
+@appendixsec Makefile Target
+@cindex Makefile target
+
+This target is a convenience target for extracting the @file{Makefile} after
+the @file{Makefile} source code has changed.  It does not need to be run at any
+other time or for any other reason.  However, after running it, be sure to process
+the new @file{TEXI} file (@pxref{Processing the @file{TEXI} File}).
+
+@<Makefile---Makefile Target@>=
+.PHONY : makefile
+makefile : jrtangle worldclean weave
+
+@
+	
+
+
+
+@c -----------------------------------------------------------------------------
+
+@node Makefile TWJR Targets
+@appendixsec Makefile TWJR Targets
+@cindex Makefile TWJR Targets
+
+These are the TexiwebJr commands @command{jrtangle} and @command{jrweave},
+which are targeted with either their names as given or without the @samp{jr}
+prefix.  @command{jrweave} can also be targeted with @command{texi}.
+
+@<Makefile---TWJR Targets@>=
+.PHONY : jrtangle tangle jrweave weave texi
+
+tangle   : jrtangle
+jrtangle :
+	jrtangle $(FILE).twjr
+
+weave    : jrweave
+jrweave  : texi
+texi     : $(FILE).texi
+$(FILE).texi : $(FILE).twjr
+	jrweave $(FILE).twjr > $(FILE).texi
+
+@
+
+
+
+@c .....................................
+
+@node Processing the @file{TEXI} File
+@appendixsubsec Processing the @file{TEXI} file
+@cindex processing the @file{TEXI} file
+@cindex @file{TEXI} file, processing
+
+Anytime after this source @file{TWJR} file has been changed, the @file{TEXI}
+file will need to be @command{jrweave}d and then processed.  Processing
+involves updating the menus and node links (Next, Previous, and Up).  If the
+@file{TEXI} file is not processed, then any command that is run on it will
+simply throw a lot of errors.  While this looks disconcerting, no harm has been
+done.  You will just need to update it, as follows, and then rerun whatever
+command you wish.
+
+@enumerate
+@item
+@b{Revert the @file{TEXI} buffer}
+
+Inside Emacs, run the command @kbd{M-x revert-buffer}.
+
+@item
+@b{Update the master menu and node links}
+
+Inside Emacs, run the command @kbd{C-u C-c C-u m}
+
+@item
+@b{Save the updated @file{TEXI} file}
+
+Inside Emacs, run the command @kbd{C-x s}
+
+@item
+@b{To start @file{Info} with the updated @file{TEXI} file}
+
+Inside Emacs, run the command @kbd{C-c C-m C-b}.  This step is not necessary
+for running either @command{html} or @command{pdf}, however.
+
+@end enumerate
+
+
+
+
+
+@c -----------------------------------------------------------------------------
+
+@node Makefile Texinfo Targets
+@appendixsec Makefile Texinfo Targets
+@cindex Makefile Texinfo rules
+
+These are the Texinfo commands:
+
+@itemize
+@item
+@command{info}
+@item
+@command{html}
+@item
+@command{openhtml}
+@item
+@command{pdf}
+@item
+@command{openpdf}
+@item
+@command{makeinfo}
+@end itemize
+
+The last command, @command{makeinfo}, makes all three @command{info},
+@command{html}, and @command{pdf}, and is used by the @command{default}
+target.
+
+@<Makefile---Texinfo Targets@>=
+.PHONY : info html openhtml pdf openpdf makeinfo
+
+info :  texi
+	makeinfo $(FILE).texi
+
+html :  texi
+	makeinfo --html $(FILE).texi
+
+openhtml : html
+	open $(FILE)/index.html
+
+pdf  :  texi
+	pdftexi2dvi --quiet --build=tidy --build-dir=build $(FILE).texi
+
+openpdf : pdf
+	open $(FILE).pdf
+
+makeinfo : info html pdf clean
+
+@
+
+
+
+
+@c -----------------------------------------------------------------------------
+
+@node Makefile Clean Targets
+@appendixsec Makefile Clean Targets
+@cindex Makefile clean targets
+
+The @command{clean} target removes backup files.  The @command{dirclean} target
+removes source directories, (e.g., @file{bin/} and and @file{src/}) and
+associated files and programs inside them.  The @command{distclean} target
+removes the @file{HTML} directory and all of its files, as well as the
+@file{PDF} file.  Finally, the @command{worldclean} target removes the
+@file{INFO} files, leaving the three files:
+
+@itemize
+@item
+@file{TWJR}
+@item
+@file{TEXI}
+@item
+@file{MAKEFILE}
+@end itemize
+
+@<Makefile---Clean Targets@>=
+.PHONY : clean dirclean distclean worldclean
+
+# remove backup files
+clean :
+	rm -f *~ .*~ #*#
+
+# remove all directories; leave TexiwebJr, Texinfo files, Makefile
+dirclean : clean
+	for file in *; do 		       \
+	  case $$file in  		       \
+	    $(FILE)* | Makefile) ;; \
+	    *) rm -vfr $$file		    ;; \
+	  esac				       \
+	done
+
+# after dirclean, remove HTML and PDF files
+distclean : dirclean
+	rm -vfr $(FILE) $(FILE).pdf
+
+# after distclean, remove INFO
+worldclean : distclean
+	rm -rfv $(FILE).info*
+
+@
+
+
+
+
+@c -----------------------------------------------------------------------------
+
+@node Makefile Program Targets
+@appendixsec Makefile Program Targets
+@cindex Makefile program targets
+
+@<Makefile---Program Targets@>=
+
+@
+
+
+
+
+
+
+
+@c *****************************************************************************
+
+@node Code Chunk Summaries
+@appendix Code Chunk Summaries
+
+This @value{APPENDIX} presents alphabetical lists of
+all the file definitions, the code chunk definitions,
+and the code chunk references.
+
+@menu
+* File Definitions::          Source files by definition.
+* Code Chunk Definitions::    Code chunks by definition.
+* Code Chunk References::     Code chunks by reference.
+@end menu
+
+
+
+
+@c -----------------------------------------------------------------------------
+
+@node File Definitions
+@appendixsec Source File Definitions
+
+@print_file_defs
+
+
+
+
+@c -----------------------------------------------------------------------------
+
+@node Code Chunk Definitions
+@appendixsec Code Chunk Definitions
+
+@print_code_defs
+
+
+
+
+@c -----------------------------------------------------------------------------
+
+@node Code Chunk References
+@appendixsec Code Chunk References
+
+@print_code_refs
+
+
+
+
+
+
+
+
+@c *****************************************************************************
+
+@node Bibliography
+@unnumbered Bibliography
+
+
+
+
+
+
+
+
+@c *****************************************************************************
+
+@node Concept Index
+@unnumbered Index
+
+@printindex cp
+
+
+
+
+
+
+
+
+@c /////////////////////////////////////////////////////////////////////////////
+@bye
+@c \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+TODO:
