@@ -1,0 +1,217 @@
+# -*- mode:org; fill-column:79; -*-
+
+#+TITLE:Exercism Exercises
+#+SUBTITLE: Version {{{version}}} {{{time(%F %R)}}}
+#+AUTHOR:WLHarvey4
+#+DATE:<2018-12-21 Fri 21:35>
+
+#+MACRO:version 0.0.1
+
+#+TEXINFO_FILENAME:Exercism.info
+#+TEXINFO_CLASS: info
+#+TEXINFO_HEADER:
+#+TEXINFO_POST_HEADER:
+#+SUBAUTHOR:
+#+TEXINFO_DIR_CATEGORY:Coding
+#+TEXINFO_DIR_TITLE:Exercises
+#+TEXINFO_DIR_DESC:Site for coding exercises
+#+TEXINFO_PRINTED_TITLE:Exercism Exercises in Writing
+
+* Python
+
+** About
+   Python is a clear and powerful object-oriented programming language with an
+   elegant and easy-to-read syntax. It is ideal for prototyping and ad-hoc
+   tasks, but also sees wide use in scientific computing, web development, and
+   automation.
+
+   Python Exercism offers 111 exercises
+
+** Guides
+
+*** Running the Tests
+:CI:
+#+CINDEX:tests, running
+:END:
+
+**** Installing ~pytest~
+:CI:
+#+CINDEX:testing tool, ~pytest~
+#+CINDEX:unit tests
+#+CINDEX:~pytest~
+#+CINDEX:~pytest-cache~
+#+CINDEX:pip3
+:END:
+     We recommend you install ~pytest~ and ~pytest-cache~.  ~pytest~ is a
+     testing tool that will give you more flexibility over running your unit
+     tests.
+
+     If you want the version of ~pytest~ for Python 3, then use
+     @@texinfo:@command{pip3}@@.
+     : pip3 install pytest pytest-cache
+
+     Note: Whichever version of ~pytest~ you install last will be the default
+     one used whenever ~pytest~ is executed, regardless of whether you have
+     installed both versions.
+
+     If you have either version of ~pytest~ installed and you want to
+     specifically run one of the versions, you can run that version by using
+     python with the @@texinfo:@option{-m}@@ flag.
+     : $ python3 -m pytest --version
+
+**** Testing Without ~pytest~
+     If you choose not to install ~pytest~, you can still run tests individually
+     and skip the rest of this tutorial:
+     #+BEGIN_EXAMPLE
+     cd exercism/python/bob
+     python bob_test.py
+     #+END_EXAMPLE
+
+**** Run All Tests
+:CI:
+#+CINDEX:tests, run all
+:END:
+     To run all tests for a specific exercise (we will take the ~bob.py~
+     exercise as an example here), place yourself in the directory where that
+     exercise has been fetched and run:
+     : pytest bob_test.py
+
+     *Note:* To run the tests you need to pass the name of the testsuite
+     file to ~pytest~ (generally, the file ending with ~_test.py~), NOT the file
+     you created to solve the problem (which is your implementation).
+
+**** Stop After Failure
+:CI:
+#+CINDEX:tests, stop after failure
+:END:
+     The above will run all the tests, whether they fail or not.  If you'd
+     rather stop the process and exit on the first failure, run:
+     : pytest -x bob_test.py
+
+**** Failed Tests First
+:CI:
+#+CINDEX:tests, failed tests first
+:END:
+     ~pytest-cache~ remembers which tests failed, and can run those tests first:
+     : pytest --ff bob_test.py
+
+**** Running All Tests for All Exercises
+:CI:
+#+CINDEX:tests, all tests, all exercises
+:END:
+     #+BEGIN_EXAMPLE
+     cd exercism/python/
+     pytest
+     #+END_EXAMPLE
+
+*** Recommended Workflow
+    We recommend you run this command while working on exercises:
+    : pytest -x --ff bob_test.py
+
+*** Python Debugger
+:CI:
+#+CINDEX:debugger
+#+CINDEX:pdb
+:END:
+    Will drop you into the python debugger when a test fails.  To learn how to
+    use @@texinfo:@command{pdb}@@, check out the [[https://docs.python.org/3/library/pdb.html#debugger-commands][documentation]].  See also
+    [[https://www.youtube.com/watch?v=P0pIW5tJrRM][Clayton Parker's "So you think you can pdb?"]]
+    : pytest --pdb bob_test.py
+
+*** PEP8
+:CI:
+#+CINDEX:PEP8
+#+CINDEX:style guide, Python
+#+CINDEX:~pytest-pep8~
+#+CINDEX:pytest
+#+CINDEX:pytest-cache
+:END:
+    PEP8 is the Style Guide for Python Code. If you would like to test for
+    compliance to the style guide, install ~pytest-pep8~.
+    : pip3 install pytest-pep8
+
+    Then, just add the @@texinfo:@option{--pep8}@@ flag to your command
+    : pytest --pep8 bob_test.py
+
+    Read the [[http://pytest.org/latest/contents.html#toc][pytest documentation]] and [[http://pythonhosted.org/pytest-cache/][pytest-cache]] documentation to learn more.
+
+** Resources
+   - [[https://exercism.io/tracks/python/learning][Learning Python]]
+   - [[https://exercism.io/tracks/python/resources][Useful Python Resource]]
+** Hello World
+:CI:
+#+CINDEX: ``Hello World''
+:END:
+
+*** Introduction
+    The classical introductory exercise. Just say ``Hello, World!''.  ``Hello,
+    World!'' is the traditional first program for beginning programming in a
+    new language or environment.
+
+    The objectives are simple:
+       + Write a function that returns the string ``Hello, World!''.
+       + Run the test suite and make sure that it succeeds.
+       + Submit your solution and check it at the website.
+
+
+    If everything goes well, you will be ready to fetch your first real
+    exercise.
+
+*** Exception Messages
+:CI:
+#+CINDEX:exceptions
+#+CINDEX:messages, exceptions
+:END:
+    Sometimes it is necessary to raise an exception. When you do this, you
+    should include a meaningful error message to indicate what the source of
+    the error is. This makes your code more readable and helps significantly
+    with debugging. Not every exercise will require you to raise an exception,
+    but for those that do, the tests will only pass if you include a message.
+
+    To raise a message with an exception, just write it as an argument to the
+    exception type. For example, instead of raise Exception, you should write:
+    : raise Exception("Meaningful message indicating the source of the error")
+
+*** Running the Tests
+    To run the tests, run the appropriate command below (why they are
+    different):
+
+**** Python3
+     : pytest hello_world_test.py
+
+     Alternatively, you can tell Python to run the pytest module (allowing the
+     same command to be used regardless of Python version):
+     : python -m pytest hello_world_test.py
+
+***** Common ~pytest~ options
+      - ~-v~ :: enable verbose output
+      - ~-x~ :: stop running tests on first failure
+      - ~--f~ :: run failures from previous test before running other test
+                 cases
+
+
+      For other options, see ~python -m pytest -h~
+
+*** Submitting Exercises
+    Note that, when trying to submit an exercise, make sure the solution is in
+    the ~$EXERCISM_WORKSPACE/python/hello-world~ directory.
+
+    You can find your Exercism workspace by running ~exercism debug~ and looking
+    for the line that starts with ~Workspace~.
+
+    For more detailed information about running tests, code style and linting,
+    please see *Running the Tests*.
+
+*** Source
+    This is an exercise to introduce users to using Exercism.
+
+    [[http://en.wikipedia.org/wiki/%22Hello,_world!%22_program]]
+
+*** Submitting Incomplete Solutions
+    It's possible to submit an incomplete solution so you can see how others
+    have completed the exercise.
+
+* Concept Index
+:PROPERTIES:
+:INDEX: cp
+:END:
