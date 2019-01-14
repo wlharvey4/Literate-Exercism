@@ -3,21 +3,233 @@
 #+TITLE:Exercism Exercises
 #+SUBTITLE: Version {{{version}}} {{{time(%F %R)}}}
 #+AUTHOR:WLHarvey4
-#+DATE:<2018-12-21 Fri 21:35>
+#+DATE:<2019-01-13 Sun 19:23>
 
-#+MACRO:version 0.0.1
+#+MACRO:version 0.0.4
 
-#+TEXINFO_FILENAME:Exercism.info
-#+TEXINFO_CLASS: info
-#+TEXINFO_HEADER:
-#+TEXINFO_POST_HEADER:
-#+SUBAUTHOR:
-#+TEXINFO_DIR_CATEGORY:Coding
-#+TEXINFO_DIR_TITLE:Exercises
-#+TEXINFO_DIR_DESC:Site for coding exercises
-#+TEXINFO_PRINTED_TITLE:Exercism Exercises in Writing
+EXERCISM---Code Practice and mentorship for Everyone
+
+Version {{{version}}} Date {{{date(%m-%d-%Y)}}}
+
+Level up your programming skills with 2,643 exercises across 48 languages, and
+insightful discussion with our dedicated team of welcoming mentors. Exercism is
+100% free forever.
+
+* Exercism
+  #+TEXINFO: @iftex
+  EXERCISM---Code Practice and mentorship for Everyone
+
+  Level up your programming skills with 2,643 exercises across 48 languages, and
+  insightful discussion with our dedicated team of welcoming mentors. Exercism is
+  100% free forever.
+  #+TEXINFO: @end iftex
+
+** About Exercism
+
+   {{{heading(What is Exercism?)}}}
+
+   Exercism is an online platform designed to help you improve your coding
+   skills through practice and mentorship.
+
+   Exercism provides you with thousands of exercises spread across numerous
+   language tracks. Once you start a language track you are presented with a
+   core set of exercises to complete. Each one is a fun and interesting
+   challenge designed to teach you a little more about the features of a
+   language.
+
+   You complete a challenge by downloading the exercise to your computer and
+   solving it in your normal working environment. Once you've finished you
+   submit it online and one of our mentors will give you feedback on how you
+   could improve it using features of the language that you may not be familiar
+   with. After a couple of rounds of refactoring, your exercise will be
+   complete and you will unlock both the next core exercise and also a series
+   of related side-exercises for you to practice with.
+
+   #+cindex: mentors
+   #+cindex: track maintainers
+   #+cindex: contributors
+   Exercism is entirely open source and relies on the contributions of
+   thousands of wonderful people, including our [[https://exercism.io/team][leadership team]], our [[https://exercism.io/team/mentors][mentors]],
+   our [[https://exercism.io/team/maintainers][track maintainers]], and thousands of [[https://exercism.io/team/contributors][contributors]].
+
+   Exercism is designed to be fun and friendly, and we place a strong emphasis
+   on empathetic communication. If you have any questions or concerns about
+
+   #+cindex: FAQ
+   #+cindex: contact
+   Exercism, you can browse our [[https://exercism.io/faqs][FAQs]] or [[https://exercism.io/contact][contact us]].
+
+   Sign up and have fun. Exercism is 100% free :)
+
+** How Exercism Works
+
+   #+cindex: how Exercism works
+   Learning through Exercism is quite different to other programming websites,
+   with a focus on individual practice and mentor-based learning. Here's how it
+   works.
+
+   1. Choose a language to master
+
+      Object   oriented,  functional,   popular,   emerging,   or  just   plain
+      obscure. With 48  different languages to explore,  Exercism has something
+      for you!
+
+   2. Complete a coding challenge on your computer
+
+      All the coding happens on your machine in an environment you're familiar
+      with. Download the template, solve the problem, and then upload your
+      solution.
+
+   3. Upload your solution and review it with a mentor
+
+      Discussing code is one of the best ways to learn. Our friendly mentors
+      will comment on your solutions online, introducing you to new ideas and
+      techniques.
+
+   4. Unlock different concepts and exercises
+
+      Our tracks have between 40 and 100 exercise each - some are fun, some are
+      tricky, some are weird, but all will teach you something new.
+
+   5. Complete the language track and achieve fluency
+
+      At the end of your language track you will have mastered the core
+      concepts and idioms of your language and be ready to use it in the real
+      world.
+
+** Available Language Tracks
+
+   #+cindex: language tracks
+   There are 48 different language tracks on Exercism for you to explore.
+
+   - Ballerina
+   - Bash
+   - C
+   - C#
+   - C++
+   - CFML
+   - Clojure
+   - CoffeeScript
+   - Common Lisp
+   - Crystal
+   - D
+   - Dart
+   - Delphi Pascal
+   - Elixir
+   - Elm
+   - Emacs Lisp
+   - Erlang
+   - F#
+   - Go
+   - Haskell
+   - Java
+   - JavaScript
+   - Julia
+   - Kotlin
+   - LFE
+   - Lua
+   - MIPS
+   - Nim
+   - Objective-C
+   - OCaml
+   - Perl5
+   - Perl6
+   - PHP
+   - PL/SQL
+   - Prolog
+   - PureScript
+   - Python [[#python][Python exercises]]
+   - R
+   - Racket
+   - ReasonML
+   - Ruby
+   - Rust
+   - Scala
+   - Scheme
+   - Standard ML
+   - Swift
+   - TypeScript
+   - Vim Script
+
+** Getting Started
+
+   #+texinfo: @heading Help! What do I do?
+
+   #+cindex: instructions
+   We know using a new product can be daunting, and Exercism is a little
+   complicated. So here's a really simple set of instructions to get you
+   started.
+
+      {{{subheading(Sign Up)}}}
+      #+cindex: sign up
+   1. Sign up at ~exercism.io~ using either your GitHub account, or by using
+      your email address and choose a password.
+   2. If you sign up using an email address, you now need to confirm it. Look
+      for the email, click the link, then log in.
+
+      {{{subheading(Pick a Language Track)}}}
+
+   3. [@3]You will now see a list of all the [[https://exercism.io/tracks][language tracks]] you can join. You
+      can click through as many as you want to explore.
+   4. Once you've found a language you want to join, click the "Join Track"
+      button.
+   5. You will now be taken into your new track. You'll see a core set of
+      exercises at the top and some side-exercises below.
+      #+cindex: Hello World
+   6. Start with the first core exercise on the track, which is normally
+      called "Hello World". Click on the exercise to begin.
+      #+cindex: Walkthrough
+   7. You will see some information and some instructions on the left-hand
+      side and a button on the right-hand side labelled "Begin
+      Walkthrough". Click on this and follow the instructions.
+
+      {{{subheading(Submit your solution, mentoring)}}}
+
+      #+cindex: upload solution
+   8. You should now have the CLI installed and the exercise downloaded to your
+      computer. Solve the exercise and then upload it using ~exercism submit
+      /PATH/TO/SOLUTION~
+   9. In your web-browser, go back to the [[https://exercism.io/tracks][language tracks]] page, choose your
+      exercise and the exercise you've just worked on. You will now see your
+      solution online and notice that it is awaiting a mentor.
+       #+cindex: mentor feedback
+       #+cindex: feedback
+   10. A mentor will now come and give you feedback on your solution. This can
+       happen really quickly (15 minutes) or take a little while (a day or two)
+       depending on demand. In the meantime, you will find other exercises on
+       your track are available for you to solve!
+
+       {{{subheading(Iterations, resubmit)}}}
+
+   11. Once you've received feedback, you can make some changes to your
+       solution and then resubmit it (see step 8). This may happen a couple of
+       times before the solution is approved.
+   12. Once the solution is approved by a mentor, you click 'complete' to mark
+       the solution completed. This will unlock lots more exercises.
+
+       {{{subheading(Get involved: mentoring or maintaining a track)}}}
+
+   13. You're now an Exercism pro! =:)=
+   14. Fancy giving back to Exercism and helping others? We always need more
+       [[http://mentoring.exercism.io/][mentors]] and [[https://exercism.io/become-a-maintainer][track maintainers]] and we'd love you to get involved!
+
+
+   {{{heading(Just want to download the new CLI?)}}}
+
+   #+cindex: GittHub
+   #+cindex: release, latest
+   You can always get the [[http://github.com/exercism/cli/releases/latest][latest release on GitHub]].
+
+   {{{heading(Still stuck?)}}}
+
+   #+cindex: FAQ
+   #+cindex: contact
+   Check out our [[https://exercism.io/faqs][FAQs]] or [[https://exercism.io/contact][contact us]].
 
 * Python
+  :PROPERTIES:
+  :CUSTOM_ID: python
+  :END:
 
 ** About
    Python is a clear and powerful object-oriented programming language with an
@@ -211,7 +423,27 @@
     It's possible to submit an incomplete solution so you can see how others
     have completed the exercise.
 
-* Concept Index
-:PROPERTIES:
-:INDEX: cp
-:END:
+
+* CONCEPT INDEX
+  :PROPERTIES:
+  :INDEX:    cp
+  :END:
+
+* PROGRAM INDEX
+  :PROPERTIES:
+  :INDEX:    pg
+  :END:
+
+* EXPORT SETUP                                                     :noexport:
+#+TEXINFO_FILENAME:Exercism.info
+#+TEXINFO_CLASS: info
+#+TEXINFO_HEADER:
+#+TEXINFO_POST_HEADER:
+#+TEXINFO_DIR_CATEGORY:Coding
+#+TEXINFO_DIR_TITLE:Exercises
+#+TEXINFO_DIR_DESC:Site for coding exercises
+#+TEXINFO_PRINTED_TITLE:Exercism Exercises in Writing
+
+* MACRO DEFINITIONS                                                :noexport:
+  #+MACRO: heading @@texinfo:@heading @@$1
+  #+MACRO: subheading @@texinfo:@subheading @@$1
