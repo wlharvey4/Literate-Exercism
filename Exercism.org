@@ -3,9 +3,9 @@
 #+TITLE:Exercism Exercises
 #+SUBTITLE: Version {{{version}}} {{{time(%F %R)}}}
 #+AUTHOR:WLHarvey4
-#+DATE:<2019-01-13 Sun 19:23>
+#+DATE: <2019-01-14 Mon 20:15>
 
-#+MACRO:version 0.0.4
+#+MACRO:version 0.0.5
 
 EXERCISM---Code Practice and mentorship for Everyone
 
@@ -371,8 +371,11 @@ insightful discussion with our dedicated team of welcoming mentors. Exercism is
 
 *** Exception Messages
 :CI:
-#+CINDEX:exceptions
-#+CINDEX:messages, exceptions
+#+CINDEX:exception, raise
+#+CINDEX:raise exception
+#+CINDEX:message, exception
+#+CINDEX:error message
+#+CINDEX:type, exception
 :END:
     Sometimes it is necessary to raise an exception. When you do this, you
     should include a meaningful error message to indicate what the source of
@@ -385,8 +388,8 @@ insightful discussion with our dedicated team of welcoming mentors. Exercism is
     : raise Exception("Meaningful message indicating the source of the error")
 
 *** Running the Tests
-    To run the tests, run the appropriate command below (why they are
-    different):
+    To run the tests, run the appropriate command below ([[https://github.com/pytest-dev/pytest/issues/1629#issue-161422224][why they are
+    different]]):
 
 **** Python3
      : pytest hello_world_test.py
@@ -398,7 +401,7 @@ insightful discussion with our dedicated team of welcoming mentors. Exercism is
 ***** Common ~pytest~ options
       - ~-v~ :: enable verbose output
       - ~-x~ :: stop running tests on first failure
-      - ~--f~ :: run failures from previous test before running other test
+      - ~--ff~ :: run failures from previous test before running other test
                  cases
 
 
@@ -423,6 +426,36 @@ insightful discussion with our dedicated team of welcoming mentors. Exercism is
     It's possible to submit an incomplete solution so you can see how others
     have completed the exercise.
 
+*** Download Your Solution
+
+    Changed computer or want to re-download the exercise after updating to the
+    latest version? Use this command:
+    : exercism download --exercise=hello-world --track=python
+
+*** Hello World Source and Test
+
+    #+begin_src python -n :tangle python/hello-world/hello_world.py
+    def hello():
+      return "Hello, World!"
+   #+end_src
+
+   #+begin_src python -n :tangle python/hello-world/hello_world_test.py
+
+   import unittest
+
+   import hello_world
+
+
+   # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
+
+   class HelloWorldTest(unittest.TestCase):
+     def test_hello(self):
+       self.assertEqual(hello_world.hello(), 'Hello, World!')
+
+
+   if __name__ == '__main__':
+     unittest.main()
+   #+end_src
 
 * CONCEPT INDEX
   :PROPERTIES:
