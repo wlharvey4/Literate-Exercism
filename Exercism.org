@@ -3,9 +3,9 @@
 #+TITLE:Exercism Exercises
 #+SUBTITLE: Version {{{version}}} {{{time(%F %R)}}}
 #+AUTHOR:WLHarvey4
-#+DATE: <2019-01-14 Mon 20:15>
+#+DATE: <2019-01-16 Wed 00:17>
 
-#+MACRO:version 0.0.5
+#+MACRO:version 0.0.6
 
 EXERCISM---Code Practice and mentorship for Everyone
 
@@ -434,12 +434,15 @@ insightful discussion with our dedicated team of welcoming mentors. Exercism is
 
 *** Hello World Source and Test
 
-    #+begin_src python -n :tangle python/hello-world/hello_world.py
+    #+texinfo: @pindex @code{hello_world.py}
+    #+begin_src python -n :tangle no
+    '''python/hello-world/hello_world.py'''
     def hello():
       return "Hello, World!"
    #+end_src
 
-   #+begin_src python -n :tangle python/hello-world/hello_world_test.py
+   #+begin_src python -n :tangle no
+   '''python/hello-world/hello_world_test.py'''
 
    import unittest
 
@@ -456,6 +459,73 @@ insightful discussion with our dedicated team of welcoming mentors. Exercism is
    if __name__ == '__main__':
      unittest.main()
    #+end_src
+** Two-Fer Problem
+
+*** Two-Fer Introduction
+
+   ~Two-fer~ or ~2-fer~ is short for 'two for one': ``One for you and one for
+   me.''
+   : "One for X, one for me."
+
+   When X is a name or ``you''.
+
+   If the given name is ``Alice'', the result should be ``One for Alice, one for
+   me.''  If no name is given, the result should be ``One for you, one for me.''
+
+*** Two-Fer Solution
+
+   #+texinfo: @pindex @code{two_fer.py}
+   #+begin_src python -n :tangle python/Two-fer/two_fer.py :mkdirp yes
+     def two_fer(name="you"):
+         return "One for " + name + ", one for me."
+   #+end_src
+
+   #+begin_src python -n :tangle python/two-fer/two_fer_test.py
+     import unittest
+
+     from two_fer import two_fer
+
+
+     # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
+
+     class TwoFerTest(unittest.TestCase):
+         def test_no_name_given(self):
+             self.assertEqual(two_fer(), 'One for you, one for me.')
+
+         def test_a_name_given(self):
+             self.assertEqual(two_fer("Alice"), "One for Alice, one for me.")
+
+         def test_another_name_given(self):
+             self.assertEqual(two_fer("Bob"), "One for Bob, one for me.")
+
+
+     if __name__ == '__main__':
+         unittest.main()
+   #+end_src
+** Acronym
+*** Acronym Introduction
+
+    Convert a phrase to its acronym.  Techies love their TLA (Three Letter
+    Acronyms)!
+
+    Help generate some jargon by writing a program that converts a long name
+    like Portable Network Graphics to its acronym (PNG).
+
+*** Acronym Solution
+
+    #+TEXINFO: @pindex @code{acronym.py}
+    #+BEGIN_SRC python -n :tangle python/acronym/acronym.py
+      def abbreviate(words):
+          acronym = ''
+          space = True
+          for ltr in words:
+              if space and ltr.isalpha():
+                  acronym += ltr
+                  space = False
+              elif ltr.isspace() or ltr == '-':
+                  space = True
+          return acronym.upper()
+    #+END_SRC
 
 * CONCEPT INDEX
   :PROPERTIES:
