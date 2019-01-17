@@ -1,11 +1,10 @@
 # -*- mode:org; fill-column:79; -*-
 
 #+TITLE:Exercism Exercises
-#+SUBTITLE: Version {{{version}}} {{{time(%F %R)}}}
 #+AUTHOR:WLHarvey4
-#+DATE: <2019-01-16 Wed 00:17>
-
-#+MACRO:version 0.0.6
+#+DATE: <2019-01-17 Thu 03:12>
+#+SUBTITLE: Version {{{version}}} {{{time(%F %R)}}}
+#+MACRO:version 0.0.7
 
 EXERCISM---Code Practice and mentorship for Everyone
 
@@ -435,11 +434,19 @@ insightful discussion with our dedicated team of welcoming mentors. Exercism is
 *** Hello World Source and Test
 
     #+texinfo: @pindex @code{hello_world.py}
-    #+begin_src python -n :tangle no
+    #+NAME: hello_world.py
+    #+begin_src python -n :tangle no :results value pp
     '''python/hello-world/hello_world.py'''
     def hello():
-      return "Hello, World!"
+      return("Hello, World!")
+
+    if __name__ == '__main__':
+      return(hello())
+
    #+end_src
+
+   #+RESULTS: hello_world.py
+   : 'Hello, World!'
 
    #+begin_src python -n :tangle no
    '''python/hello-world/hello_world_test.py'''
@@ -459,6 +466,7 @@ insightful discussion with our dedicated team of welcoming mentors. Exercism is
    if __name__ == '__main__':
      unittest.main()
    #+end_src
+
 ** Two-Fer Problem
 
 *** Two-Fer Introduction
@@ -478,6 +486,9 @@ insightful discussion with our dedicated team of welcoming mentors. Exercism is
    #+begin_src python -n :tangle python/Two-fer/two_fer.py :mkdirp yes
      def two_fer(name="you"):
          return "One for " + name + ", one for me."
+
+     if __name__ == '__main__':
+         return two_fer("Bob")
    #+end_src
 
    #+begin_src python -n :tangle python/two-fer/two_fer_test.py
@@ -525,6 +536,10 @@ insightful discussion with our dedicated team of welcoming mentors. Exercism is
               elif ltr.isspace() or ltr == '-':
                   space = True
           return acronym.upper()
+
+      if __name__ == '__main__':
+          return(abbreviate('National Aeronautics Space Administration'))
+
     #+END_SRC
 
 * CONCEPT INDEX
@@ -546,6 +561,7 @@ insightful discussion with our dedicated team of welcoming mentors. Exercism is
 #+TEXINFO_DIR_TITLE:Exercises
 #+TEXINFO_DIR_DESC:Site for coding exercises
 #+TEXINFO_PRINTED_TITLE:Exercism Exercises in Writing
+#+PROPERTY: header-args :exports both :results value pp
 
 * MACRO DEFINITIONS                                                :noexport:
   #+MACRO: heading @@texinfo:@heading @@$1
