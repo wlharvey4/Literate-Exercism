@@ -541,6 +541,45 @@ insightful discussion with our dedicated team of welcoming mentors. Exercism is
           return(abbreviate('National Aeronautics Space Administration'))
 
     #+END_SRC
+** High Scores
+*** High Scores Introduction
+
+    Manage a game player's High Score list.
+
+    Your task is to build a high-score component of the classic Frogger game,
+    one of the highest selling and addictive games of all time, and a classic
+    of the arcade era. Your task is to write methods that return the highest
+    score from the list, the last added score, the three highest scores, and a
+    report on the difference between the last and the highest scores.
+
+*** High Scores Solution
+
+    #+BEGIN_SRC python -n :tangle python/high-scores/high_scores.py :result both
+      class HighScores(object):
+          def __init__(self, scores):
+              self.scores = scores
+
+          def report(self):
+              latest = self.latest;
+              highest = self.latest;
+              return "Your latest score was " + latest + ". That's your personal best."
+
+          def highest(self):
+              return max(self.scores)
+
+          def latest(self):
+              return self.scores[-1]
+
+          def diff(self):
+              return self.highest() - self.latest()
+
+      if __name__ == '__main__':
+          set_of_scores = HighScores([1,2,3])
+          print(set_of_scores.highest())
+    #+END_SRC
+
+    #+RESULTS:
+    : None
 
 * CONCEPT INDEX
   :PROPERTIES:
